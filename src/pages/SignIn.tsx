@@ -1,5 +1,21 @@
+import { Input } from "../components/Input"
+
 export function SignIn(){
     return (
-        <h1 className="text-3xl font-bold text-red-700">SignIn</h1>
+        <form className="w-full flex flex-col gap-4">
+            <Input
+                required
+                legend="E-mail"
+                type="email"
+                placeholder="seu@email.com"
+            />
+
+            <Input 
+                required 
+                legend="Senha" 
+                type="password"
+                placeholder="sua senha"
+            />
+        </form>
     )
 }
