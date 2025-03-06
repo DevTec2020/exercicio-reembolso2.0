@@ -4,6 +4,8 @@ import { AuthLayout } from "../components/AuthLayout";
 
 import { SignIn } from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
+import { NotFound } from "../pages/Notfound";
+
 
 
 export function AuthRoutes(){
@@ -13,6 +15,9 @@ export function AuthRoutes(){
                 <Route path="/" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
             </Route>
+
+            <Route path="*" element={<NotFound />} />
+
         </Routes>
     )
 }
