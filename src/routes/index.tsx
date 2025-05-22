@@ -1,4 +1,8 @@
+
+import { use } from "react";
 import { BrowserRouter } from "react-router";
+
+import { AuthContext } from "../contexts/AuthContext.tsx";
 
 import { Loading } from "../components/Loading.tsx";
 
@@ -15,6 +19,9 @@ const session = {
 }
 
 export function Routes(){
+    const context = use(AuthContext) 
+    console.log(context)
+
     function Route() {
         switch (session.user.role) {
             case "employee":
