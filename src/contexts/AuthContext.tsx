@@ -1,3 +1,11 @@
-import { createContext } from "react";
+import { createContext, ReactNode } from "react";
 
-export const AuthContext = createContext({ name: "Rodrigo"})
+export const AuthContext = createContext({})
+
+export function AuthProvider({ children }: { children: ReactNode}) {
+    return (
+        <AuthContext.Provider value={{name: "Leonardo"}}>
+            { children }
+        </AuthContext.Provider>
+    )
+}
