@@ -1,10 +1,8 @@
-
-import { use } from "react";
 import { BrowserRouter } from "react-router";
 
-import { AuthContext } from "../contexts/AuthContext.tsx";
-
 import { Loading } from "../components/Loading.tsx";
+
+import { useAuth } from "../hooks/useAuth.tsx";
 
 import { AuthRoutes } from "./AuthRoutes.tsx";
 import { ManagerRoutes } from "./ManagerRoutes.tsx";
@@ -19,7 +17,7 @@ const session = {
 }
 
 export function Routes(){
-    const context = use(AuthContext) 
+    const context = useAuth()
     console.log(context)
 
     function Route() {
