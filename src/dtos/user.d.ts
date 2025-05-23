@@ -1,6 +1,6 @@
 type UserAPIRole = "employee" | "manager"
 
-type userAPIResponse = {
+type UserAPIResponse = {
     token: string
     user: {
         id: string
