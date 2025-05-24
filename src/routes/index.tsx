@@ -8,12 +8,9 @@ import { AuthRoutes } from "./AuthRoutes.tsx";
 import { ManagerRoutes } from "./ManagerRoutes.tsx";
 import { EmployeeRoutes } from "./EmployeeRoutes.tsx";
 
-const isLoading = false
-
-
 
 export function Routes(){
-    const {session} = useAuth()
+    const {session, isLoading} = useAuth()
 
 
     function Route() {
