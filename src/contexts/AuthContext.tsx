@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createContext, ReactNode } from "react";
 
 type AuthContext = {
@@ -19,6 +19,23 @@ export function AuthProvider({ children }: { children: ReactNode}) {
 
         setSession(data)
     }
+
+
+    function loadUser(){
+        const user = localStorage.getItem(`${LOCAL_STORAGE_KEY}:user`)
+        const token = localStorage.getItem(`${LOCAL_STORAGE_KEY}:token`)
+        
+        if(token && user) {
+            setSession({
+                token,
+                user: JSON.parse(user)
+            })
+        }
+    }
+
+    useEffect(() => {
+        loadUser()
+    },[])
 
     return (
         <AuthContext.Provider value={{session, save}}>
