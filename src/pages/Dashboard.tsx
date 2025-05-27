@@ -11,7 +11,7 @@ import { Input } from "../components/Input"
 import { Button } from "../components/Button"
 import { Pagination } from "../components/Pagination"
 import { RefundItem, RefundItemProps } from "../components/RefundItem"
-import { error } from "zod/v4/locales/ar.js"
+
 
 const REFUND_EXAMPLE = {
     id:"123",
@@ -31,7 +31,7 @@ export function Dashboard(){
 
     async function fetchRefunds(){
         try{
-            const response = await api.get(
+            const response = await api.get<RefundsPaginationAPIResponse>(
                 `/refunds?name=${name.trim()}&page=${page}&perPage=${PER_PAGE}`
             )
         
