@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router"
 import { z, ZodError} from "zod"
-import axios, { AxiosError, formToJSON } from "axios"
+import { AxiosError} from "axios"
 
 import { api } from "../services/api"
 import fileSvg from "../assets/file.svg"
